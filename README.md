@@ -1,6 +1,6 @@
 # Nadia Nathania — Personal Website
 
-A multi-persona personal website for **Nadia Nathania** — doctor, designer, and
+A personal website for **Nadia Nathania** — doctor, designer, illustrator, and
 writer. Editorial & minimalist design, built as a fast static site.
 
 ## Tech stack
@@ -14,12 +14,9 @@ writer. Editorial & minimalist design, built as a fast static site.
 
 ## Pages
 
-| Route       | Description                                 |
-| ----------- | ------------------------------------------- |
-| `/`         | Home — hero, about, selected works, contact |
-| `/doctor`   | Doctor persona (placeholder content)        |
-| `/designer` | Designer persona (placeholder content)      |
-| `/writer`   | Writer persona (placeholder content)        |
+| Route | Description                                 |
+| ----- | ------------------------------------------- |
+| `/`   | Home — hero, about, selected works, contact |
 
 The navbar's **About me** and **Contact me** links are in-page anchors on the
 home page (`/#about-me`, `/#contact-me`). **Selected works** is a dropdown to the
@@ -76,6 +73,6 @@ src/
 │   └── BaseHead.astro # SEO <head>: meta, canonical, OG/Twitter, JSON-LD
 ├── data/site.ts       # site + persona content (edit here)
 ├── layouts/BaseLayout.astro
-├── pages/             # index, doctor, designer, writer
+├── pages/             # index
 └── styles/global.css  # theme tokens + Tailwind
 ```
