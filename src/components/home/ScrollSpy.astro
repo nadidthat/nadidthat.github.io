@@ -1,0 +1,45 @@
+---
+// Client-only scrollspy: keeps the URL fragment in sync with the visible homepage
+// section. Renders nothing; ships only a bundled script.
+---
+
+<script>
+  const SECTION_IDS = ['about-me', 'selected-works', 'contact-me'];
+  const NAV_OFFSET = 80; // fixed navbar height (Tailwind h-20)
+
+  const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(
+    (el): el is HTMLElement => el !== null,
+  );
+
+  if (sections.length > 0) {
+    // On load with no fragment, land on the top.
+    if (location.hash === '') {
+      window.scrollTo({ top: 0 });
+    }
+
+    let currentHash = '';
+
+    const setHash = (hash: string) => {
+      if (hash === currentHash) return;
+      currentHash = hash;
+      history.replaceState(null, '', hash || location.pathname + location.search);
+    };
+
+    const updateActiveSection = () => {
+      let activeId = '';
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= NAV_OFFSET + 1) {
+          activeId = section.id;
+        }
+      }
+      setHash(activeId ? `#${activeId}` : '');
+    };
+
+    const observer = new IntersectionObserver(updateActiveSection, {
+      rootMargin: `-${NAV_OFFSET}px 0px 0px 0px`,
+    });
+    sections.forEach((section) => observer.observe(section));
+
+    updateActiveSection(); // set initial state on load
+  }
+</script>

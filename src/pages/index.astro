@@ -1,0 +1,17 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import AboutMe from '@/components/home/AboutMe.astro';
+import SelectedWorks from '@/components/home/SelectedWorks.astro';
+import ContactMe from '@/components/home/ContactMe.astro';
+import ScrollSpy from '@/components/home/ScrollSpy.astro';
+import { site } from '@/data/site';
+---
+
+<BaseLayout title={`${site.name} — Doctor, Designer & Writer`} description={site.description}>
+  <Hero />
+  <AboutMe />
+  <SelectedWorks />
+  <ContactMe />
+  <ScrollSpy />
+</BaseLayout>

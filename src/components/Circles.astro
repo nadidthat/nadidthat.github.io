@@ -1,0 +1,11 @@
+---
+interface Props {
+  count?: number;
+}
+
+const { count = 3 } = Astro.props;
+---
+
+{Array.from({ length: count }).map(() => (
+  <span class="border-ink size-2 rounded-full border sm:size-3"></span>
+))}

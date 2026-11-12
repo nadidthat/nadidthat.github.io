@@ -1,0 +1,77 @@
+---
+import { Icon } from 'astro-icon/components';
+import { site } from '@/data/site';
+import { MailIcon } from 'lucide-react';
+import Circles from '@/components/Circles.astro';
+import Rectangle from '@/components/Rectangle.astro';
+import contactMeImage from '@/assets/contact-me.png';
+---
+
+<section id="contact-me" class="mx-auto max-w-6xl px-4 py-8 sm:px-12 lg:px-10">
+  <div class="grid gap-6 lg:grid-cols-2 lg:items-start">
+    <div class="flex items-center gap-3 pt-4" aria-hidden="true">
+      <Circles />
+    </div>
+    <h2 class="display text-right text-6xl sm:text-7xl lg:text-8xl">
+      Work
+      <br />
+      <span class="text-muted-ink">With</span>
+      <br />
+      Me
+    </h2>
+  </div>
+
+  <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:items-end">
+    <div class="text-sm">
+      <p class="eyebrow font-bold text-lg">Contact me</p>
+      <dl class="mt-4 space-y-2 text-ink-soft">
+        <a
+          href={`mailto:${site.email}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-ink"
+        >
+          <div class="flex gap-2">
+            <dt>
+              <MailIcon className="size-4" aria-hidden="true" />
+            </dt>
+            <dd>{site.email}</dd>
+          </div>
+        </a>
+        <a
+          href={site.social.linkedin.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-ink"
+        >
+          <div class="flex gap-2">
+            <dt>
+              <Icon name="simple-icons:linkedin" class="size-4" aria-hidden="true" />
+            </dt>
+            <dd>{site.social.linkedin.label}</dd>
+          </div>
+        </a>
+      </dl>
+    </div>
+
+    <div class="flex justify-end order-first sm:order-last" aria-hidden="true">
+      <Rectangle solid />
+    </div>
+  </div>
+
+  <div class="group relative mt-16 flex min-h-72 items-center overflow-hidden bg-ink p-8 text-canvas lg:min-h-96 lg:p-12">
+    <div
+      class="absolute inset-0 transition-transform duration-300 group-hover:scale-[1.05] bg-center bg-no-repeat bg-cover"
+      style=`background-image: url(${contactMeImage.src})`
+    ></div>
+    <h3 class="display relative text-4xl sm:text-7xl lg:text-8xl">
+      Can&rsquo;t Wait
+      <br />
+      To Hear
+      <br />
+      From You
+    </h3>
+  </div>
+
+  <p class="mt-4 text-right text-xs text-muted-foreground">Photos taken by {site.name}</p>
+</section>

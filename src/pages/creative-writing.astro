@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PersonaPage from '@/components/PersonaPage.astro';
+import { getPersona, site } from '@/data/site';
+
+const persona = getPersona('creative-writing');
+---
+
+<BaseLayout title={`${persona.label} — ${site.name}`} description={persona.intro}>
+  <PersonaPage slug="creative-writing" />
+</BaseLayout>
