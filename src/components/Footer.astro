@@ -27,6 +27,6 @@ const year = new Date().getFullYear();
     <p>
       &copy;{year} {site.name}. All rights reserved.
     </p>
-    <p>Doctor · Designer · Writer</p>
+    <p>{site.roles.join(' · ')}</p>
   </div>
 </footer>

@@ -10,7 +10,6 @@ export const site = {
   brand: 'nadidthat*',
   shortName: 'Nadia',
   roles: ['Doctor', 'Designer', 'Illustrator', 'Writer'] as const,
-  tagline: 'Doctor · Designer · Writer',
   description:
     'A medical doctor, writer, designer, and illustrator passionate about mental health and providing holistic, purposeful, and personalized solutions.',
   email: 'nadidthat@gmail.com',

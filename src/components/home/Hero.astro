@@ -1,14 +1,14 @@
 ---
 import { site } from '@/data/site';
 import Circles from '@/components/Circles.astro';
-import portraitImage from '@/assets/portrait.png';
+import portraitImage from '@/assets/portrait.webp';
 ---
 
-<section id="hero" class="relative mx-auto max-w-6xl px-4 pt-5 sm:px-12 lg:pt-16">
+<section id="hero" class="group relative mx-auto max-w-6xl px-4 pt-5 sm:px-12 lg:pt-16">
   <img
     src=`${portraitImage.src}`
     alt="portrait"
-    class="absolute left-4 sm:left-12 bottom-0 -z-10 max-w-full h-50 sm:h-100"
+    class="absolute left-4 sm:left-12 bottom-0 -z-10 max-w-full h-50 sm:h-100 transition-transform duration-300 group-hover:scale-[1.05]"
   />
 
   <div class="flex items-start justify-between">

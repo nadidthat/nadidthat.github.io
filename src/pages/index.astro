@@ -8,7 +8,7 @@ import ScrollSpy from '@/components/home/ScrollSpy.astro';
 import { site } from '@/data/site';
 ---
 
-<BaseLayout title={`${site.name} — Doctor, Designer & Writer`} description={site.description}>
+<BaseLayout title={`${site.name} — ${site.roles.join(' ')}`} description={site.description}>
   <Hero />
   <AboutMe />
   <SelectedWorks />
